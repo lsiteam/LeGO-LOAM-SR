@@ -84,13 +84,13 @@ MapOptimization::MapOptimization(const std::string &name, Channel<AssociationOut
   aftMappedTrans.child_frame_id = "aft_mapped";
 
   // Declare parameters
-  this->declare_parameter(PARAM_ENABLE_LOOP);
-  this->declare_parameter(PARAM_SEARCH_RADIUS);
-  this->declare_parameter(PARAM_SEARCH_NUM);
-  this->declare_parameter(PARAM_HISTORY_SEARCH_RADIUS);
-  this->declare_parameter(PARAM_HISTORY_SEARCH_NUM);
-  this->declare_parameter(PARAM_HISTORY_SCORE);
-  this->declare_parameter(PARAM_GLOBAL_SEARCH_RADIUS);
+  this->declare_parameter(PARAM_ENABLE_LOOP, true);
+  this->declare_parameter(PARAM_SEARCH_RADIUS, 50.0);
+  this->declare_parameter(PARAM_SEARCH_NUM, 50);
+  this->declare_parameter(PARAM_HISTORY_SEARCH_RADIUS, 7.0);
+  this->declare_parameter(PARAM_HISTORY_SEARCH_NUM, 25);
+  this->declare_parameter(PARAM_HISTORY_SCORE, 0.3);
+  this->declare_parameter(PARAM_GLOBAL_SEARCH_RADIUS, 500.0);
 
   // Read parameters
   if (!this->get_parameter(PARAM_ENABLE_LOOP, _loop_closure_enabled)) {
